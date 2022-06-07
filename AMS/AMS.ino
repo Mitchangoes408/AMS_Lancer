@@ -130,6 +130,10 @@ void loop() {
     case 'K':
       airTo_Cruise();
       break;
+        
+    case 'Z':
+        onShutDown();
+        break;
 
     default:
       Serial.println("Invalid input received.");
