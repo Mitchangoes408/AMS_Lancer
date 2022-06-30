@@ -160,6 +160,38 @@ void loop() {
   Serial.println(input);
 
   switch (input) {
+    case 'A':
+      Serial.println("Air up FrontDriver.");
+      break;
+
+    case 'a':
+      Serial.println("Air down FrontDriver.");
+      break;
+
+    case 'B':
+      Serial.println("Air up FrontPassenger.");
+      break;
+
+    case 'b':
+      Serial.println("Air down FrontPassenger.");
+      break;
+
+    case 'C':
+      Serial.println("Air up RearDriver.");
+      break;
+
+    case 'c':
+      Serial.println("Air down RearDriver.");
+      break;
+
+    case 'D':
+      Serial.println("Air up RearPassenger.");
+      break;
+
+    case 'd':
+      Serial.println("Air down RearPassenger.");
+      break;
+
     case 'R':
       airTo_Ride();
       break;
@@ -168,7 +200,7 @@ void loop() {
       airTo_Slam();
       break;
 
-    case 'C':
+    case 'K':
       airTo_Cruise();
       break;
 
