@@ -93,6 +93,7 @@ float FP_Curr = 0;
 float RD_Curr = 0;
 float RP_Curr = 0;
 float tank_Curr = 0;
+float corners_Curr [] = { 0, 0, 0, 0};  //in case i want to use an array to store values instead
 
 int sensorValue = 0;
 int sensorOut = 0;
@@ -159,38 +160,6 @@ void loop() {
   Serial.println(input);
 
   switch (input) {
-    case 'A':
-      Serial.println("Air up FrontDriver.");
-      break;
-
-    case 'a':
-      Serial.println("Air down FrontDriver.");
-      break;
-
-    case 'B':
-      Serial.println("Air up FrontPassenger.");
-      break;
-
-    case 'b':
-      Serial.println("Air down FrontPassenger.");
-      break;
-
-    case 'C':
-      Serial.println("Air up RearDriver.");
-      break;
-
-    case 'c':
-      Serial.println("Air down RearDriver.");
-      break;
-
-    case 'D':
-      Serial.println("Air up RearPassenger.");
-      break;
-
-    case 'd':
-      Serial.println("Air down RearPassenger.");
-      break;
-
     case 'R':
       airTo_Ride();
       break;
@@ -199,7 +168,7 @@ void loop() {
       airTo_Slam();
       break;
 
-    case 'K':
+    case 'C':
       airTo_Cruise();
       break;
 
