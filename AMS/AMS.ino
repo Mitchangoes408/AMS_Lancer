@@ -122,14 +122,14 @@ void setup() {
 
   //SET PIN MODES
   /*  RELAY PINS  */
-  pinMode(relay1_Pin, OUTPUT);
-  pinMode(relay2_Pin, OUTPUT);
-  pinMode(relay3_Pin, OUTPUT);
-  pinMode(relay4_Pin, OUTPUT);
-  pinMode(relay5_Pin, OUTPUT);
-  pinMode(relay6_Pin, OUTPUT);
-  pinMode(relay7_Pin, OUTPUT);
-  pinMode(relay8_Pin, OUTPUT);
+  pinMode(relay1_Pin, OUTPUT);    //Pair1 UP
+  pinMode(relay2_Pin, OUTPUT);    //Pair1 DOWN
+  pinMode(relay3_Pin, OUTPUT);    //Pair2 UP
+  pinMode(relay4_Pin, OUTPUT);    //Pair2 DOWN
+  pinMode(relay5_Pin, OUTPUT);    //Pair3 UP
+  pinMode(relay6_Pin, OUTPUT);    //Pair3 DOWN
+  pinMode(relay7_Pin, OUTPUT);    //Pair4 UP
+  pinMode(relay8_Pin, OUTPUT);    //Pair4 DOWN
 
   /*  USING PORT MANIPULATION
       - all ports used as outputs
@@ -159,37 +159,46 @@ void loop() {
   input = Serial.read();
   Serial.println(input);
 
+  //  USING SWITCH CASE FOR INPUTS
   switch (input) {
     case 'A':
       Serial.println("Air up FrontDriver.");
-      break;
-
-    case 'a':
-      Serial.println("Air down FrontDriver.");
+      digitalWrite(relay1_Pin, HIGH);
       break;
 
     case 'B':
-      Serial.println("Air up FrontPassenger.");
-      break;
-
-    case 'b':
-      Serial.println("Air down FrontPassenger.");
+      Serial.println("Air down FrontDriver.");
+      digitalWrite(relay2_Pin, HIGH);
       break;
 
     case 'C':
-      Serial.println("Air up RearDriver.");
-      break;
-
-    case 'c':
-      Serial.println("Air down RearDriver.");
+      Serial.println("Air up FrontPassenger.");
+      digitalWrite(relay3_Pin, HIGH);
       break;
 
     case 'D':
-      Serial.println("Air up RearPassenger.");
+      Serial.println("Air down FrontPassenger.");
+      digitalWrite(relay4_Pin, HIGH);
       break;
 
-    case 'd':
+    case 'E':
+      Serial.println("Air up RearDriver.");
+      digitalWrite(relay5_Pin, HIGH);
+      break;
+
+    case 'F':
+      Serial.println("Air down RearDriver.");
+      digitalWrite(relay6_Pin, HIGH);
+      break;
+
+    case 'G':
+      Serial.println("Air up RearPassenger.");
+      digitalWrite(relay7_Pin, HIGH);
+      break;
+
+    case 'H':
       Serial.println("Air down RearPassenger.");
+      digitalWrite(relay8_Pin, HIGH);
       break;
 
     case 'R':
@@ -206,6 +215,77 @@ void loop() {
 
     default:
       Serial.println("Invalid input received.");
+      PORTA &= B00000000;
+
+  }
+
+  //  USING IF STATEMENTS FOR INPUTS
+  if(input == 'A') {
+    digitalWrite(relay1_Pin, HIGH);
+  }
+  if(input == 'a') {
+    digitalWrite(relay1_Pin, LOW);
+  }
+
+  if(input == 'B') {
+    digitalWrite(relay2_Pin, HIGH);
+  }
+  if(input == 'b') {
+    digitalWrite(relay2_Pin, LOW);
+  }
+
+  if(input == 'C') {
+    digitalWrite(relay3_Pin, HIGH);
+  }
+  if(input == 'c') {
+    digitalWrite(relay3_Pin, LOW);
+  }
+
+  if(input == 'D') {
+    digitalWrite(relay4_Pin, HIGH);
+  }
+  if(input == 'd') {
+    digitalWrite(relay4_Pin, LOW);
+  }
+
+  if(input == 'E') {
+    digitalWrite(relay5_Pin, HIGH);
+  }
+  if(input == 'e') {
+    digitalWrite(relay5_Pin, LOW);
+  }
+
+  if(input == 'F') {
+    digitalWrite(relay6_Pin, HIGH);
+  }
+  if(input == 'f') {
+    digitalWrite(relay6_Pin, LOW);
+  }
+
+  if(input == 'G') {
+    digitalWrite(relay7_Pin, HIGH);
+  }
+  if(input == 'g') {
+    digitalWrite(relay7_Pin, LOW);
+  }
+
+  if(input == 'H') {
+    digitalWrite(relay8_Pin, HIGH);
+  }
+  if(input == 'h') {
+    digitalWrite(relay8_Pin, LOW);
+  }
+
+  if(input == 'K') {
+    airTo_Cruise();
+  }
+
+  if(input == 'R') {
+    airTo_Ride();
+  }
+
+  if(input == 'S') {
+    airTo_Slam();
   }
 
   delay(10);
