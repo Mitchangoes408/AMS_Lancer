@@ -3,82 +3,166 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
 
     <Button
         android:id="@+id/all_Up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck"
-        tools:layout_editor_absoluteY="169dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <Button
-        android:id="@+id/FD_Up"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/all_Up">
 
-    <Button
-        android:id="@+id/FD_Down"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="15dp">
+
+                <Button
+                    android:id="@+id/FP_Up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/FP_Down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/FD_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/FP_Pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <Button
+                    android:id="@+id/FD_Up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/FD_Down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="265dp" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/all_Down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    <Button
-        android:id="@+id/FP_Up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="217dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="1dp">
 
-    <Button
-        android:id="@+id/FP_Down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="265dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="15dp">
 
-    <Button
-        android:id="@+id/RD_Up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="376dp" />
+                <Button
+                    android:id="@+id/RP_Up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
 
-    <Button
-        android:id="@+id/RD_Down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="424dp" />
+                <Button
+                    android:id="@+id/RD_Down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/RP_Up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="376dp" />
+            <TextView
+                android:id="@+id/RD_Pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="TextView" />
 
-    <Button
-        android:id="@+id/RP_Down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="424dp" />
+            <TextView
+                android:id="@+id/RP_Pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
+
+                <Button
+                    android:id="@+id/RD_Up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/RP_Down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/all_Down"
@@ -88,38 +172,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="472dp" />
-
-    <TextView
-        android:id="@+id/FD_pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="313dp" />
-
-    <TextView
-        android:id="@+id/FP_Pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="313dp" />
-
-    <TextView
-        android:id="@+id/RD_Pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="356dp" />
-
-    <TextView
-        android:id="@+id/RP_Pressure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
